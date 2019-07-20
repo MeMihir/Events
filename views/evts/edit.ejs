@@ -1,0 +1,10 @@
+<form action="/events/<%= event._id %>?_method=PUT" method="post">
+    <input type="text" value="<%= event.name %>" name="name" placeholder="event name" id="">
+    <input type="text" value="<%= event.club %>" name="club"  placeholder="club name" id="">
+    <input type="datetime-local" value="<%= event.date %>" name="date" id="">
+    <input type="number" value="<%= event.fees %>" name="fees" placeholder="fees" id="">
+    <input type="checkbox" value="<%= event.OD %>" name="OD" value="true" id="">
+    <textarea name="abstract" id="" cols="30" rows="10"> <%= event.abstract %> </textarea>
+    <input type="number" name="prize" value="<%= event.prize %>" id="" placeholder="prize-mone">
+    <button type="submit">SUBMIT</button>
+</form>

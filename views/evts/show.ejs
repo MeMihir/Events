@@ -1,0 +1,11 @@
+<h1><%= event.name %></h1>
+<h3><%= event.club %></h3>
+<p> <%= event.abstract %> </p>
+<h5> <%= event.date %> </h5>
+<h5> <%= event.fees %> </h5>
+<h5> <%= event.prize %> </h5>
+
+<button ><a href="/events/<%= event._id %>/edit">EDIT</a></button>
+<form action="/events/<%= event._id %>?_method=DELETE" method="post">
+    <input type="submit" value="DELETE">
+</form>
