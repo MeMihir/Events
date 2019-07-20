@@ -1,8 +1,8 @@
 var mongoose    = require('mongoose');
 
 var eventSchema = new mongoose.Schema({
-    event_name  : String,
-    club_name   : String,
+    name        : String,
+    club        : String,
     date        : Date,
     fees        : Number,
     OD          : Boolean,

@@ -6,12 +6,15 @@ methodOverride  = require('method-override')
 
 var event       = require('./models/evt') 
 
+var evtRoutes   = require('./routes/evt')
 
 mongoose.connect('mongodb://localhost:27017/events_db',{useNewUrlParser : true});
 app.use(bodyParser.urlencoded({extended : true}));
 app.set('view engine','ejs');
 app.use(methodOverride('_method'));
 app.use(express.static('assets'));
+
+app.use(evtRoutes);
 
 app.get('/',(req,res) => {
     res.send("HOME PAGE");
