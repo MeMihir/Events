@@ -1,8 +1,50 @@
-<form action="/signup" method="post">
+<!-- <form action="/signup" method="post">
     <input type="text" name="newClub[username]" placeholder="Name"id="">
     <input type="text" name="newClub[email]"  placeholer="email" id="">
     <input type="text" name="newClub[logo]" id="" placeholder="logo url">
     <textarea name="newClub[abstract]" id="" cols="30" rows="10">Abstract</textarea>
     <input type="password" name="password" id="" placeholder="password">
     <button type="submit">SUBMIT</button>
-</form>
+</form> -->
+
+<% include ../partials/header.ejs %>
+<div class="d-flex justify-content-center">
+    <div>
+        <h1>Sign Up</h1>
+        <form action="/signup" method="post" style="max-width: 30rem;">
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Club Name</span>
+                </div>
+                <input type="text" name="newClub[username]" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Email</span>
+                </div>
+                <input type="email" name="newClub[email]" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">password</span>
+                </div>
+                <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >Logo</span>
+                </div>
+                <input type="text" name="newClub[logo]" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    
+            <button type="submit" class="btn btn-outline-success btn-md mb-3 btn-block">Sign Up</button>
+        </form>
+        <div><a href="/events" class="btn btn-primary btn-sm mt-2">BACK</a></div>
+    </div>
+    </div>
+    
+    <% include ../partials/footer.ejs %>

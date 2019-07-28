@@ -1,4 +1,4 @@
-<form action="/events/<%= event._id %>?_method=PUT" method="post">
+<!-- <form action="/events/<%= event._id %>?_method=PUT" method="post">
     <input type="text" value="<%= event.name %>" name="name" placeholder="event name" id="">
     <input type="text" value="<%= event.club %>" name="club"  placeholder="club name" id="">
     <input type="datetime-local" value="<%= event.date %>" name="date" id="">
@@ -7,4 +7,63 @@
     <textarea name="abstract" id="" cols="30" rows="10"> <%= event.abstract %> </textarea>
     <input type="number" name="prize" value="<%= event.prize %>" id="" placeholder="prize-mone">
     <button type="submit">SUBMIT</button>
+</form> -->
+
+<% include ../partials/header %>
+
+<h1>Edit Event</h1>
+
+<form action="/events/<%= event._id %>?_method=put" method="post">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" value="<%= event.name %>" name="name" aria-describedby="inputGroup-sizing-default">
+    </div>
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Club Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" value="<%= event.club %>" name="club" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <!-- <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Image</span>
+        </div>
+        <input type="file" class="form-control" aria-label="Sizing example input" name="image" aria-describedby="inputGroup-sizing-default" accept="image/*">
+    </div> -->
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Image URL</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" value="<%= event.image %>" name="image" aria-describedby="inputGroup-sizing-default">
+    </div>
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Abstract</span>
+        </div>
+        <textarea class="form-control" name="abstract" aria-label="With textarea"><%= event.abstract %></textarea>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Date and Time</span>
+        </div>
+        <input type="datetime-local" value="<%= event.date %>" name="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+        <div class="input-group-prepend">
+            <span class="input-group-text" >OD</span>
+        </div>
+        <input type="checkbox" value="<%= event.OD %>" name="OD" value="true" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Fees</span>
+        </div>
+        <input type="number" value="<%= event.fees %>" name="fees" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+    </div>
+
+    <button type="submit" class="btn btn-outline-success btn-md mb-3 btn-block">Submit</button>
 </form>
+<% include ../partials/footer %>

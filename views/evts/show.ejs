@@ -1,11 +1,54 @@
-<h1><%= event.name %></h1>
+<!-- <h1><%= event.name %></h1>
 <h3><%= event.club %></h3>
 <p> <%= event.abstract %> </p>
 <h5> <%= event.date %> </h5>
 <h5> <%= event.fees %> </h5>
-<h5> <%= event.prize %> </h5>
+<h5> <%= event.prize %> </h5> -->
 
+<% include ../partials/header.ejs %>
+
+<div class="row mt-5 d-flex justify-content-between">
+    <div class="col-xl-3 col-lg-3 col-md-12 col-12 col-xs-12 row">
+        <div class="card mb-12 col-xl-12 col-lg-12 col-md-6 col-6 col-xs-6" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%= event.club %></h5>
+                <h6 class="card-subtitle mb-2 text-muted">subtitle</h6>
+                <p class="card-text">Some details about the club</p>
+            </div>
+        </div>
+        <div class="card mb-12 col-xl-12 col-lg-12 col-md-6 col-6 col-xs-6" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">LOCATION</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-xl-8 col-lg-8 col-md-12 col-12 col-xs-12">
+        <div class="card mb-3">
+            <img src="<%= event.image %>" class="card-img-top" alt="...">
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title"> <%= event.name %> </h5>
+                <p class="card-text"><%= event.abstract %></p>
+                <h5> Date : <%= event.date.toString() %> </h5>
+                <h5> Fees : <%= event.fees %> </h5>
+                <h5> <%= event.prize %> </h5>
+                <hr>
+                <div class="row d-flex justify-content-around">
+                    <a href="/events/<%= event._id %>/edit" class="btn btn-warning mr-5">EDIT</a>
+
+                    <form action="/events/<%= event._id %>?_method=delete" method="post">
+                        <input type="submit" class="btn btn-danger" value="DELETE">
+                    </form>
+                </div>
+            </div>
+        </div>              
+    </div>
+</div>
+<!-- 
 <button ><a href="/events/<%= event._id %>/edit">EDIT</a></button>
 <form action="/events/<%= event._id %>?_method=DELETE" method="post">
     <input type="submit" value="DELETE">
-</form>
+</form> -->

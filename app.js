@@ -5,12 +5,14 @@ const express     = require('express'),
 methodOverride  = require('method-override'),
     passport    = require('passport'),
 localStratergy  = require('passport-local'),
-require('dotenv')
+
     
     Club        = require('./models/club') 
 
 const evtRoutes     = require('./routes/evt'),
     authRoutes      = require('./routes/auth')
+
+require('dotenv').config()
 
 mongoose.connect(process.env.DB_URL,{useNewUrlParser : true});
 app.use(bodyParser.urlencoded({extended : true}));
@@ -27,6 +29,10 @@ app.use(require('express-session')({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use((req, res, next) =>{
+    res.locals.currUser = req.club;
+    next()
+})
 
 passport.use(new localStratergy(Club.authenticate()))
 passport.serializeUser(Club.serializeUser())

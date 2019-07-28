@@ -21,7 +21,7 @@ router.get('/events/new',(req,res) => {
 })
 
 //UPLOAD
-router.post('/events/new',(req,res) => {
+router.post('/events',(req,res) => {
     Event.create(req.body, (err, event) => {
         if(err){
             console.log(err);

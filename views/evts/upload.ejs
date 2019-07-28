@@ -1,4 +1,4 @@
-<form action="/events/new" method="post">
+<!-- <form action="/events/new" method="post">
     <input type="text" name="name" placeholder="event name" id="">
     <input type="text" name="club" placeholder="club name" id="">
     <input type="datetime-local" name="date" id="">
@@ -7,5 +7,69 @@
     <textarea name="abstract" id="" cols="30" rows="10"></textarea>
     <input type="number" name="prize" id="" placeholder="prize-mone">
     <button type="submit">SUBMIT</button>
+</form> -->
+
+<% include ../partials/header %>
+<div>    
+<h1 class="display-7">Add a new Event</h1>
+        
+<form action="/events" method="post">
+        
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" name="name" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Club Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input"  name="club" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <!-- <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Image</span>
+        </div>
+        <input type="file" class="form-control" aria-label="Sizing example input" name="image" aria-describedby="inputGroup-sizing-default" accept="image/*">
+    </div> -->
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Image URL</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" name="image" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Abstract</span>
+        </div>
+        <textarea class="form-control" name="abstract" aria-label="With textarea"></textarea>
+    </div>
+    
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Date and Time</span>
+            </div>
+            <input type="datetime-local" name="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+            <div class="input-group-prepend">
+                <span class="input-group-text" >OD</span>
+            </div>
+            <input type="checkbox" name="OD" value="true" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+            <div class="input-group-prepend">
+                <span class="input-group-text" >Fees</span>
+            </div>
+            <input type="number" name="fees" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">    
+        </div>
+    
+    <button type="submit" class="btn btn-outline-success btn-md mb-3 btn-block">Submit</button>
 </form>
+
+<div><a href="/events" class="btn btn-primary btn-sm mt-2">BACK</a></div>
+
+</div>
+</div>
+<% include ../partials/footer %>
 

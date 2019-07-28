@@ -3,6 +3,7 @@ var mongoose    = require('mongoose');
 var eventSchema = new mongoose.Schema({
     name        : String,
     club        : String,
+    image       : String,
     date        : Date,
     fees        : Number,
     OD          : Boolean,
